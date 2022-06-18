@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Números Aleatórios</title>
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Gerador de números</h1>
+    </header>
+
+    <section>
+        <div>
+            <!-- Inputs do valor mínimo e máximo -->
+            Digite um valor mínimo e um máximo <br>
+            <input type="number" name="txt1n" id="txt1id"> <input type="number" name="txt2n" id="txt2id">
+            
+            <br>
+            <p>
+                Gerar quantos números? 
+                <input type="number" name="txt3n" id="txt3id" min="1" value="1">
+
+                <br>
+
+                <!-- Botões para gerar os num. e limpar o resultado -->
+                <input type="button" value="Calcular" onclick="randomNumbers()"> <input type="button" value="Limpar" onclick="clearRes()">
+            </p>
+            <br>
+
+            Preferências:
+
+            <!-- Radios sobre incluir ou não o min. e o max. -->
+            <p>
+                <input type="radio" name="radn" id="rad_includeTrue" checked>
+                <label for="rad_includeTrue">Incluir número mínimo e máximo</label>
+
+                <br>
+
+                <input type="radio" name="radn" id="rad_includeFalse">
+                <label for="rad_includeFalse">Não incluir</label>
+            </p>
+                
+              
+            <!-- Radios sobre repetir ou não números -->
+            <p>
+                <input type="radio" name="rad2n" id="rad_repeatnumbersTrue" checked>
+                <label for="rad_repeatnumbersTrue">Repetir números</label>
+
+                <br>
+
+                <input type="radio" name="rad2n" id="rad_repeatnumbersFalse">
+                <label for="rad_repeatnumbersFalse">Não repetir</label>
+            </p>
+
+
+            <!-- Radios sobre ordenar os números -->
+            <p>
+                <input type="radio" name="rad3n" id="rad_sortnumbers1True">
+                <label for="rad_sortnumbersTrue">Ordenar do menor para o maior</label>
+
+                <br>
+                <input type="radio" name="rad3n" id="rad_sortnumbers2True">
+                <label for="rad_sortnumbers2True">Do maior para o menor</label>
+                <br>
+
+                <input type="radio" name="rad3n" id="rad_sortnumbersFalse" checked>
+                <label for="rad_sortnumbersFalse">Não ordenar</label>
+            </p>
+        </div>
+
+
+        <div id="res">
+            Calculando...
+        </div>
+    </section>
+
+    <footer>
+        <p>Footer :D</p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
