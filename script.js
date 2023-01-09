@@ -22,19 +22,33 @@ function randomNumbers() {
     // Declarando valores para o código ficar mais curto
     let Min = input.min.value
     let Max = input.max.value
-    const HowMany = input.howMany.value
+    let HowMany = input.howMany.value
 
 
     // Se algum input estiver vazio
-    if(Min.length === 0 || Max.length === 0 || HowMany.length === 0) return window.alert('Algum número está faltando!')
+    if(Min.length === 0 || Max.length === 0 || HowMany.length === 0) {
+        return window.alert('Algum número está faltando!')
+    }
+    
+    // Transformando os valores em números
+    Min = Number(Min)
+    Max = Number(Max)
+    HowMany = Number(HowMany)
 
     // Se algum número é igual ao outro (menos o HowMany pq n precisa)
-    if(Min === Max) return window.alert('Os números min. e max. n podem ser iguais!')
+    if(Min === Max) {
+        return window.alert('Os números min. e max. n podem ser iguais!')
+    }
 
+    // Verificando se os números são decimais
+    if( parseInt(Max) !== Max || parseInt(Min) !== Min || parseInt(HowMany) !== HowMany ) {
+        return window.alert('err: Nenhum número pode ser decimal!')
+    }
 
     // Verificando se o HowMany é muito grande
-    if(Number(HowMany) > 41) return window.alert('O máximo de vezes possível é 41')
-
+    if(HowMany > 41) {
+        return window.alert('O máximo de vezes possível é 41')
+    }
 
     
     // Se o min for maior q o max, eles trocam de valor
@@ -61,14 +75,18 @@ function randomNumbers() {
                 Não dá, mas se pudesse repetir, daria
             */
 
-            if(String(Number(Max) - Number(Min) - Number(HowMany)).includes('-') && String(Number(Max) - Number(Min) - Number(HowMany)) != '-1') return window.alert('Impossível gerar essa quantidade de números')
+            if( String(Max - Min - HowMany).includes('-') && String(Max - Min - HowMany) != '-1') {
+                return window.alert('Impossível gerar essa quantidade de números')
+            }
         }
         
         
         // Se não for pra incluir
         if(radio.includeMinAndMax[1].checked) {
 
-            if(String(Number(Max) - Number(Min) - Number(HowMany)).includes('-')) return window.alert('Impossível gerar essa quantidade de números')
+            if( String(Max - Min - HowMany).includes('-')) {
+                return window.alert('Impossível gerar essa quantidade de números')
+            }
         }
     }    
 
@@ -87,7 +105,7 @@ function randomNumbers() {
             
 
             // Gerando um número que chega ao máximo
-            generatedNumber = Math.floor(Math.random() * (Number(Max) + 1))
+            generatedNumber = Math.floor(Math.random() * (Max + 1))
 
 
             // Se o número gerado for menor que o mínimo, retorna a função
@@ -99,7 +117,7 @@ function randomNumbers() {
 
 
             // Gerando um número que não chega ao máximo
-            generatedNumber = Math.floor(Math.random() * (Number(Max) - 1))
+            generatedNumber = Math.floor(Math.random() * (Max - 1))
 
 
             // Se o número gerado for menor ou igual ao minimo, retorna a função
@@ -145,7 +163,6 @@ function randomNumbers() {
     }
 
 
-
     // Colocando os números na div de resultados
 
     res.innerHTML = ''
@@ -172,7 +189,6 @@ function randomNumbers() {
             res.innerHTML += `${Numbers[i]} `
         }
     }
-
 }
 
 
