@@ -20,21 +20,23 @@
             <input type="number" name="txt1n" id="txt1id"> <input type="number" name="txt2n" id="txt2id">
             
             <br>
-            <p>
-                Gerar quantos números? 
-                <input type="number" name="txt3n" id="txt3id" min="1" value="1">
-
-                <br>
-
-                <!-- Botões para gerar os num. e limpar o resultado -->
-                <input type="button" value="Calcular" onclick="randomNumbers()"> <input type="button" value="Limpar" onclick="clearRes()">
-            </p>
             <br>
 
-            <cinza>Preferências:</cinza>
+            Gerar quantos números? 
+            <input type="number" name="txt3n" id="txt3id" min="1" value="1">
+            
+            <br>
+
+            <!-- Botões para gerar os num. e limpar o resultado -->
+            <input type="button" value="Gerar" onclick="randomNumbers()"> <input type="button" value="Limpar" onclick="clearRes()">
+           
+            <br>
+            <br>
 
             <!-- Radios sobre incluir ou não o min. e o max. -->
             <p>
+                <cinza>Preferências:</cinza>
+                <br>
                 <input type="radio" name="radn" id="rad_includeTrue" checked>
                 <label for="rad_includeTrue">Incluir número mínimo e máximo</label>
 
